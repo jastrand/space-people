@@ -13,6 +13,12 @@ fetch(apiUrl)
     const numLaunches = launchArray.length;
     launchCountHeader.innerHTML += `${numLaunches}`
 
+    const flipThem = () => {
+      launchArray.reverse();
+
+    };
+    flipThem();
+
     launchArray.forEach((launch) => {
       const launchDate = new Date(launch.launch_date_utc);
 
@@ -20,8 +26,6 @@ fetch(apiUrl)
 
       const launchDateString = launchDate.toLocaleDateString('en-US');
       const launchTimeString = launchDate.toLocaleTimeString('en-US');
-
-
 
       container.innerHTML += `
       <h2>${launch.flight_number}. ${launch.mission_name}</h2>
@@ -31,5 +35,6 @@ fetch(apiUrl)
       <p>Details: ${launch.details}</p>
       `
     })
+
 
   })
