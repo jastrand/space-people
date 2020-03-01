@@ -26,8 +26,8 @@ fetch(apiUrl)
       container.innerHTML += `
       <h2>${launch.flight_number}. ${launch.mission_name}</h2>
       <img src="${launchImage}">
-      <p>Launch date: ${launchDateString} ${launchTimeString}</p>
-      <p>Succeded: ${launch.launch_success}</p>
+      <p>Date & Time: ${launchDateString} ${launchTimeString}</p>
+      <p>Launch succeeded: ${launch.launch_success}</p>
       <p>Details: ${launch.details}</p>
       `
     })
