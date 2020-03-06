@@ -27,12 +27,17 @@ fetch(apiUrl)
       const launchDateString = launchDate.toLocaleDateString('en-US');
       const launchTimeString = launchDate.toLocaleTimeString('en-US');
 
+      let isSuccess = `${launch.launch_success}`;
+      if (isSuccess === true) {
+        return "Good day";
+      }
+
       container.innerHTML += `
-      <h2>${launch.flight_number}. ${launch.mission_name}</h2>
+      <section class="card"><h2>${launch.flight_number}. ${launch.mission_name}</h2>
       <img src="${launchImage}">
-      <p>Date & Time: ${launchDateString} ${launchTimeString}</p>
-      <p>Launch succeeded: ${launch.launch_success}</p>
-      <p>Details: ${launch.details}</p>
+      <p>📅 ${launchDateString} 🕒 ${launchTimeString}</p>
+      <p>Launch succeeded: ${isSuccess}</p>
+      <p><span class="bold">Mission details</span>: ${launch.details}</p></section>
       `
     })
 
